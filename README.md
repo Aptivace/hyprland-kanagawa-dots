@@ -9,3 +9,5 @@ sudo chmod +x ~/.config/rofi/wallpapermenu.sh
 Для смены обоев используется [swww](https://github.com/LGFae/swww)
 ### Fish Shell
 Тема [Tide](https://github.com/IlanCosman/tide)
+### GTK Theme
+[Kanagawa-GKT-Theme](https://github.com/Fausto-Korpsvart/Kanagawa-GKT-Theme)
