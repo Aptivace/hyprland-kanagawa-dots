@@ -1,6 +1,6 @@
 ## Kanagawa config
 ### Rofi
-Для того, чтобы работали скрипты rofi:
+Для того чтобы работали скрипты rofi:
 ```bash
 sudo chmod +x ~/.config/rofi/powermenu.sh
 sudo chmod +x ~/.config/rofi/wallpapermenu.sh
