@@ -1,0 +1,125 @@
+{
+  "position": "top",
+  "output": "DP-1",
+  "margin-left": -10,
+  "margin-right": 0,
+  "height": 25,
+  "modules-left": ["custom/logo", "hyprland/workspaces", "hyprland/window"],
+  "modules-center": ["clock#full"],
+  "modules-right": [
+    "hyprland/language",
+    "group/zvuk",
+    "group/hardware",
+    "network"
+  ],
+  "hyprland/window": {
+    "format": "{initialTitle}",
+    "max-length": 35,
+    "rewrite": {
+      "": "Hyprland",
+      "kitty": "Terminal  "
+    },
+    "separate-outputs": false
+  },
+  "hyprland/language": {
+    "format": "<span color=\"#DCA561\"></span> {}",
+    "format-en": "EN",
+    "format-ru": "RU"
+  },
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "sort-by-number": true,
+    "persistent-workspaces": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6"
+    }
+  },
+  "wlr/taskbar": {
+    "format": " {icon}",
+    "all-outputs": true,
+    "icon-size": 14,
+    "on-click": "activate"
+  },
+  "custom/logo": {
+    "format": "",
+    "on-click": "~/.config/rofi/powermenu.sh",
+    "tooltip": true,
+    "tooltip-format": "kurwa shutdown"
+  },
+  "group/hardware": {
+    "orientation": "horizontal",
+    "modules": ["cpu", "memory"]
+  },
+  "group/zvuk": {
+    "orientation": "horizontal",
+    "modules": ["pulseaudio#output", "pulseaudio#input"]
+  },
+  "clock#full": {
+    "format": "{:%a %d, %b %Y %H:%M:%S}",
+    "tooltip": false,
+    "interval": 1
+  },
+  "clock#simpleclock": {
+    "format": " {:%H:%M}",
+    "tooltip": false
+  },
+  "clock": {
+    "format": "{:L%a %d, %b %Y}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%d-%m-%Y}"
+  },
+  "cpu": {
+    "format": "<span color=\"#DCA561\"></span> {usage}%",
+    "tooltip": false
+  },
+  "memory": {
+    "format": "<span color=\"#DCA561\"></span> {percentage}%"
+  },
+  "temperature": {
+    "critical-threshold": 80,
+    "format": "{icon} {temperatureC}°C",
+    "format-icons": ["", "", ""]
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}  {capacity}%",
+    "format-full": "{icon}  {capacity}%",
+    "format-charging": "  {capacity}%",
+    "format-plugged": "  {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["", "", "", "", ""]
+  },
+  "network": {
+    "format-wifi": "  {signalStrength}%",
+    "format-ethernet": "<span color=\"#DCA561\"></span> {bandwidthDownBytes}",
+    "format-disconnected": "⚠",
+    "format-alt": "{ifname}: {essid}"
+  },
+  "pulseaudio#output": {
+    "format": "<span color=\"#DCA561\">{icon}</span> {volume}%",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-bluetooth-muted": " {icon}",
+    "format-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "default": ["", "", ""]
+    },
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+  },
+  "pulseaudio#input": {
+    "format": "{format_source}",
+    "format-source": "<span color=\"#DCA561\"></span> {volume}%",
+    "format-source-muted": "",
+    "tooltip-format": "Fifine K680",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-"
+  }
+}
